@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.android.habittracker.data.ExerciseContract.ExerciseEntry;
 import com.example.android.habittracker.data.ExerciseDbHelper;
+
 /**
  * Created by Rudster on 11/17/2016.
  */
@@ -25,7 +26,7 @@ public class EditorActivity extends AppCompatActivity {
     private EditText mWeightEditText;
 
     //EditText field to enter number of sets done of the exercise
-    private  EditText mSetEditText;
+    private EditText mSetEditText;
 
     //EditText field to enter number of reps done for that set
     private EditText mRepsEditText;
@@ -43,7 +44,7 @@ public class EditorActivity extends AppCompatActivity {
 
     }
 
-    private void insertExcercise(){
+    private void insertExcercise() {
 
         String exerciseNameString = mExerciseNameEditText.getText().toString().trim();
         String weightString = mWeightEditText.getText().toString().trim();
@@ -66,23 +67,23 @@ public class EditorActivity extends AppCompatActivity {
 
         long newRowId = db.insert(ExerciseEntry.TABABLE_NAME, null, values);
 
-        if (newRowId == -1){
+        if (newRowId == -1) {
             Toast.makeText(this, "Error with saving workout", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             Toast.makeText(this, "Workout saved with id:" + newRowId, Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_editor, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         //user clicked on a menu option in the app bar overflow menu
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             //Respond to cllick on "save" menu option
             case R.id.action_save:
                 //Save workout to database

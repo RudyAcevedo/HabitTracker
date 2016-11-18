@@ -8,12 +8,12 @@ import android.provider.BaseColumns;
 
 public final class ExerciseContract {
 
-    public static abstract class ExerciseEntry implements BaseColumns{
+    public static abstract class ExerciseEntry implements BaseColumns {
         public static final String TABABLE_NAME = "workouts";
         public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_EXERCISE_NAME = "exercise";
         public static final String COLUMN_EXERCISE_WEIGHT = "weight";
-        public static final String COLUMN_EXERCISE_SETS =   "sets";
-        public static final String COLUMN_EXERCISE_REPS =   "reps";
+        public static final String COLUMN_EXERCISE_SETS = "sets";
+        public static final String COLUMN_EXERCISE_REPS = "reps";
     }
 }

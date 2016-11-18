@@ -23,9 +23,9 @@ public class CatalogActivity extends AppCompatActivity {
 
         //Set up FAB to open Editor Activity
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener(){
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(CatalogActivity.this, EditorActivity.class);
                 startActivity(intent);
             }
@@ -34,14 +34,14 @@ public class CatalogActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         displayDatabaseInfo();
     }
 
     //Temp helper method to display info
-    private void displayDatabaseInfo(){
-        ExerciseDbHelper mDbHelper =  new ExerciseDbHelper(this);
+    private void displayDatabaseInfo() {
+        ExerciseDbHelper mDbHelper = new ExerciseDbHelper(this);
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
@@ -68,10 +68,10 @@ public class CatalogActivity extends AppCompatActivity {
             displayView.setText("The workouts table contains " + cursor.getCount()
                     + " workouts.\n\n");
             displayView.append(ExerciseEntry._ID + " - " +
-            ExerciseEntry.COLUMN_EXERCISE_NAME + " - " +
-            ExerciseEntry.COLUMN_EXERCISE_WEIGHT + " - " +
-            ExerciseEntry.COLUMN_EXERCISE_SETS + " - " +
-            ExerciseEntry.COLUMN_EXERCISE_REPS + "\n");
+                    ExerciseEntry.COLUMN_EXERCISE_NAME + " - " +
+                    ExerciseEntry.COLUMN_EXERCISE_WEIGHT + " - " +
+                    ExerciseEntry.COLUMN_EXERCISE_SETS + " - " +
+                    ExerciseEntry.COLUMN_EXERCISE_REPS + "\n");
 
             int idColumnIndex = cursor.getColumnIndex(ExerciseEntry._ID);
             int exerciseNameColumnIndex = cursor.getColumnIndex(ExerciseEntry.COLUMN_EXERCISE_NAME);
@@ -79,7 +79,7 @@ public class CatalogActivity extends AppCompatActivity {
             int setColumnIndex = cursor.getColumnIndex(ExerciseEntry.COLUMN_EXERCISE_SETS);
             int repColumnIndex = cursor.getColumnIndex(ExerciseEntry.COLUMN_EXERCISE_REPS);
 
-            while (cursor.moveToNext()){
+            while (cursor.moveToNext()) {
 
                 int currentID = cursor.getInt(idColumnIndex);
                 String currentName = cursor.getString(exerciseNameColumnIndex);
@@ -88,13 +88,13 @@ public class CatalogActivity extends AppCompatActivity {
                 int currentRep = cursor.getInt(repColumnIndex);
 
                 displayView.append("\n" + currentID + " - " +
-                currentName + " - " +
-                currentWeight + " - " +
-                currentSet + " - " +
-                currentRep);
+                        currentName + " - " +
+                        currentWeight + " - " +
+                        currentSet + " - " +
+                        currentRep);
             }
 
-        }finally {
+        } finally {
             cursor.close();
         }
     }
