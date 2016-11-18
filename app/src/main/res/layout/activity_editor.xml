@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--Exercise field-->
+    <EditText
+        android:id="@+id/exercise_name"
+        style="@style/EditorFieldStyle"
+        android:hint="Exercise"
+        android:inputType="textCapWords" />
+
+    <!--Weight field-->
+    <EditText
+        android:id="@+id/weight"
+        style="@style/EditorFieldStyle"
+        android:hint="Weight"
+        android:inputType="number" />
+
+    <!--sets field-->
+    <EditText
+        android:id="@+id/sets"
+        style="@style/EditorFieldStyle"
+        android:hint="# of sets"
+        android:inputType="number" />
+
+    <!--reps field-->
+    <EditText
+        android:id="@+id/reps"
+        style="@style/EditorFieldStyle"
+        android:hint="# of reps"
+        android:inputType="number" />
+
+
+</LinearLayout>
